@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.Cokey", "Csip.Cokey\Csip.Cokey.csproj", "{674C324F-38B1-4BE1-912E-6F3CD99BB66C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Cokey", "Csip.Cokey\Csip.Cokey.csproj", "{674C324F-38B1-4BE1-912E-6F3CD99BB66C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.Scenario", "Csip.Scenario\Csip.Scenario.csproj", "{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Scenario", "Csip.Scenario\Csip.Scenario.csproj", "{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.Cokey.Tests", "Csip.Cokey.Tests\Csip.Cokey.Tests.csproj", "{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Cokey.Tests", "Csip.Cokey.Tests\Csip.Cokey.Tests.csproj", "{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.Scenario.Tests", "Csip.Scenario.Tests\Csip.Scenario.Tests.csproj", "{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Scenario.Tests", "Csip.Scenario.Tests\Csip.Scenario.Tests.csproj", "{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.Common", "Common\Csip.Common.csproj", "{1D69C8D9-310B-4D07-9860-B6FEAB070C3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Common", "Csip.Common\Csip.Common.csproj", "{F0A946D2-2816-4129-875F-411910DCD690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D69C8D9-310B-4D07-9860-B6FEAB070C3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D69C8D9-310B-4D07-9860-B6FEAB070C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D69C8D9-310B-4D07-9860-B6FEAB070C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D69C8D9-310B-4D07-9860-B6FEAB070C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A946D2-2816-4129-875F-411910DCD690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A946D2-2816-4129-875F-411910DCD690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A946D2-2816-4129-875F-411910DCD690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A946D2-2816-4129-875F-411910DCD690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
