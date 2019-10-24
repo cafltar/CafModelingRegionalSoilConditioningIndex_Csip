@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Csip.Cokey</AssemblyName>
+    <RootNamespace>Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Csip.Common.csproj" />
+  </ItemGroup>
+
+</Project>
