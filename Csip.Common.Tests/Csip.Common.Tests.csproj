@@ -1,11 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
-    <RootNamespace>Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Csip.Scenario\Csip.Scenario.csproj" />
+    <ProjectReference Include="..\Csip.Common\Csip.Common.csproj" />
   </ItemGroup>
 
 </Project>
