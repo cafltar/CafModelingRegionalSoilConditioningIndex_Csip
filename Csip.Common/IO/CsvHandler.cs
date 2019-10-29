@@ -24,7 +24,11 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
 
         public void WriteLocationFile(string filePath, List<Location> locations)
         {
-            throw new NotImplementedException();
+            using (var writer = new StreamWriter(filePath))
+            using (var csv = new CsvWriter(writer))
+            {
+                csv.WriteRecords(locations);
+            }
         }
     }
 }

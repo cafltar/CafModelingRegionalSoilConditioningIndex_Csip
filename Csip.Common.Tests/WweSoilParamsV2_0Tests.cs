@@ -56,7 +56,6 @@ namespace Csip.Common.Tests
             // Assert
             Assert.Equal(10, actual.MapUnits.Count);
             Assert.Equal("3963.178", actual.MapUnitMeta.Area);
-
         }
     }
 }
