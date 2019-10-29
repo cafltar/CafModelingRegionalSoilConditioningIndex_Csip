@@ -1,5 +1,7 @@
+using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Services;
 using System;
+using System.IO;
 using System.Net.Http;
 using Xunit;
 
@@ -37,6 +39,24 @@ namespace Csip.Common.Tests
 
             // Assert
             Assert.True(!String.IsNullOrEmpty(actual));
+        }
+
+        [Fact]
+        public void ParseResults_ValidJson_ExpectedResult()
+        {
+            // Arrange
+            var sut = new WweSoilParamsV2_0(client);
+            string json = File.ReadAllText(
+                @"Assets\WweSoilParamsV2JsonResults.json");
+            //WweSoilParamsV2Results expected = new WweSoilParamsV2Results();
+
+            // Act
+            WweSoilParamsV2Results actual = sut.ParseResultsJson(json);
+
+            // Assert
+            Assert.Equal(10, actual.MapUnits.Count);
+            Assert.Equal("3963.178", actual.MapUnitMeta.Area);
+
         }
     }
 }

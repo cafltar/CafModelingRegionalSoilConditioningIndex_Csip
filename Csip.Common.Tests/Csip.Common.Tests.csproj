@@ -23,4 +23,10 @@
     <ProjectReference Include="..\Csip.Common\Csip.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\WweSoilParamsV2JsonResults.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
