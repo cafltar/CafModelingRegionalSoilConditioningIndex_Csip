@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models
 {
-    class Location
+    public class Location
     {
     }
 }
