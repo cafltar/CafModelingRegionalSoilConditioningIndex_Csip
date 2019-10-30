@@ -11,6 +11,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
         // Returns a cokey string from 
         public string GetDominateCokey(WweSoilParamsV2Results mapUnits)
         {
+            // TODO: Possibly return Mukey, percent, area, along with cokey
+
             // I love Linq
             string cokey = mapUnits.MapUnits
                 .OrderByDescending(m => m.Area)

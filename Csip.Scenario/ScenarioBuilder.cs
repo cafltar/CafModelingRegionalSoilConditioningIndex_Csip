@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 {
-    class ScenarioBuilder
+    public class ScenarioBuilder
     {
+        public string Build()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

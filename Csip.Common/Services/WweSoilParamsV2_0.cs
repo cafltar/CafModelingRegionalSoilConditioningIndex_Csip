@@ -28,7 +28,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
             HttpContent httpContent = new StringContent(
                 jsonContent, Encoding.UTF8, "application/json");
 
-            
+            // TODO: Add better error handling
             var response = await client.PostAsync(endpointPath, httpContent);
 
             if (response.IsSuccessStatusCode)
@@ -45,6 +45,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
 
         public WweSoilParamsV2Results ParseResultsJson(string jsonResult)
         {
+            // TODO: Read error message, include in returned object
+
             WweSoilParamsV2Results result = new WweSoilParamsV2Results();
 
             var options = new JsonDocumentOptions
