@@ -25,4 +25,10 @@
     <ProjectReference Include="..\Csip.Scenario\Csip.Scenario.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\templateWepp.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

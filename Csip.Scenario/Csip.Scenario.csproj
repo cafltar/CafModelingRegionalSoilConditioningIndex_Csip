@@ -6,6 +6,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Csip.Common\Csip.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\rot_20191106\AnnualAEC_HeavyTillage.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\AnnualAEC_NoTill.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\AnnualAEC_ReducedTillage.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\AnnualAEC_ReducedTillage_PreventedPlanting_6yr.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\GrainFallowAEC_HeavyTillage.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\GrainFallowAEC_NoTill.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\GrainFallowAEC_ReducedTillage.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\TransitionAEC_HeavyTillage.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\TransitionAEC_NoTill.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\rot_20191106\TransitionAEC_ReducedTillage.rot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

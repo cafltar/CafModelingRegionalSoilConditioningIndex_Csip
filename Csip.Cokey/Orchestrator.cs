@@ -53,7 +53,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
                 {
                     Cokey = Convert.ToInt32(cokey),
                     Latitude = point.Latitude,
-                    Longitude = point.Longitude
+                    Longitude = point.Longitude,
+                    AnthromeKey = point.Anthrome
                 };
 
                 locations.Add(location);

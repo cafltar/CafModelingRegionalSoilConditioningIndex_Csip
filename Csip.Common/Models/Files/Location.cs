@@ -15,5 +15,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Mode
         
         [Index(2)]
         public int Cokey { get; set; }
+
+        [Index(3)]
+        public int AnthromeKey { get; set; }
     }
 }
