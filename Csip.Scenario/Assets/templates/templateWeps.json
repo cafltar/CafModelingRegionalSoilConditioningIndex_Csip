@@ -1,6 +1,6 @@
 {
    "metainfo": {
-      "mode": "async"
+      "mode": "sync"
    },
    "parameter": [
       {
