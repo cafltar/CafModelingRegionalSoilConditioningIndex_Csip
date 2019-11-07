@@ -62,7 +62,6 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
             {
                 foreach (string rotation in rotations[location.AnthromeKey])
                 {
-
                     // TODO: Ugly! Implement fluent pattern here
                     string scenario =
                         AddRotation(

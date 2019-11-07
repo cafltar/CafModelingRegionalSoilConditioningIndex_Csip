@@ -15,7 +15,7 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            ScenarioBuilder sut = new ScenarioBuilder();
+            IScenarioBuilder sut = new WeppBuilder();
 
             // Act
             List<string> actual = sut.BuildScenarios(
@@ -26,7 +26,5 @@ namespace Csip.IntegrationTests
             // Assert
             Assert.NotNull(actual);
         }
-
-
     }
 }
