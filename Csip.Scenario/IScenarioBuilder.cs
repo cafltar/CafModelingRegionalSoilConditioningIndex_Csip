@@ -93,5 +93,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
         public JObject AddRotation(
             JObject scenario,
             string rotationJson);
+
+        public string GetTemplate();
     }
 }
