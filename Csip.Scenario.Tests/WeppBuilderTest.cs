@@ -7,13 +7,13 @@ using Xunit;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Tests
 {
-    public class ScenarioBuilderTest
+    public class WeppBuilderTest
     {
         [Fact]
         public void GetRotations_ValidInput_ExpectedResults()
         {
             // Arrange
-            ScenarioBuilder sut = new ScenarioBuilder();
+            IScenarioBuilder sut = new WeppBuilder();
 
             // Act
             var actual = sut.GetRotations();
@@ -28,11 +28,11 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
         public void Build_ValidInput_ExpectedResults()
         {
             // Arrange
-            ScenarioBuilder sut = new ScenarioBuilder();
+            IScenarioBuilder sut = new WeppBuilder();
             List<Location> locations = GetMockLocations();
             string template = File.ReadAllText(@"Assets\templateWepp.json");
             Dictionary<int, List<string>> rotations = GetMockRotations();
-            //Dictionary<int, List<string>> rotations = sut.GetRotations();
+
             // Act
             List<string> actual = sut.BuildScenarios(
                 locations,

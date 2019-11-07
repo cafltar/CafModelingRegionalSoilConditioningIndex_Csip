@@ -10,7 +10,7 @@ namespace Csip.Common.Tests
     public class WweSoilParamsV2_0Tests
     {
         readonly string jsonPolygonValid = "[[-118.67213507701905,45.71042895488162],[-118.67213507701905,45.74640181911838],[-118.62060247098096,45.74640181911838],[-118.62060247098096,45.71042895488162],[-118.67213507701905,45.71042895488162]]";
-        HttpClient client = new HttpClient();
+        readonly HttpClient client = new HttpClient();
 
         [Fact]
         public void BuildJsonContent_ValidJson_ExpectedResult()

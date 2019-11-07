@@ -30,5 +30,17 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
                 csv.WriteRecords(locations);
             }
         }
+
+        public List<Location> ReadLocationFile(string filePath)
+        {
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader))
+            {
+                var records =
+                    csv.GetRecords<Location>().ToList();
+
+                return records;
+            }
+        }
     }
 }
