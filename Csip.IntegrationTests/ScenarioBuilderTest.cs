@@ -73,5 +73,34 @@ namespace Csip.IntegrationTests
             if (Directory.Exists(writePath))
                 Directory.Delete(writePath, true);
         }
+
+        [Fact]
+        public void Wepp_WriteScenarioFiles_FromVerificationLocations()
+        {
+            // Arrange
+            CsvHandler reader = new CsvHandler();
+            IScenarioBuilder builder = new WepsBuilder();
+            ScenarioHandler writer = new ScenarioHandler();
+            string currentDate = DateTime.Now.ToString("yyyyMMdd");
+            string expectedZip = $"Assets\\output\\wepp_{currentDate}.zip";
+            string writePath = $"Assets\\output\\wepp_{currentDate}";
+
+            // Act
+            List<string> actual = builder.BuildScenarios(
+                reader.ReadLocationFile(@"Assets\location_verification_10.csv"),
+                builder.GetTemplate(),
+                builder.GetRotations());
+
+            writer.WriteScenariosZip(actual, writePath);
+
+            // Assert
+            Assert.True(File.Exists(expectedZip));
+
+            // Cleanup
+            if (File.Exists(expectedZip))
+                File.Delete(expectedZip);
+            if (Directory.Exists(writePath))
+                Directory.Delete(writePath, true);
+        }
     }
 }
