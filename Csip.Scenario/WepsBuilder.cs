@@ -71,5 +71,29 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 
             return withRotation;
         }
+
+        public JObject AddSoilSlope(
+            JObject scenario,
+            double soilSlope)
+        {
+            return scenario;
+        }
+
+        public JObject AddSoilLength(
+            JObject scenario,
+            double soilLength)
+        {
+            JObject withSoilLength = scenario;
+
+            foreach (var o in withSoilLength["parameter"])
+            {
+                if (o["name"].ToString() == "crlmod")
+                {
+                    o["value"]["rotationFiles"][0]["rotation"]["length"] = soilLength;
+                }
+            }
+
+            return withSoilLength;
+        }
     }
 }

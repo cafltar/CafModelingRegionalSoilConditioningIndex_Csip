@@ -64,14 +64,18 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
                 {
                     // TODO: Ugly! Implement fluent pattern here
                     string scenario =
-                        AddRotation(
-                            AddCokey(
-                                AddLocation(
-                                    jsonObj,
-                                    location.Latitude,
-                                    location.Longitude),
-                                location.Cokey),
-                            rotation)
+                        AddSoilLength(
+                            AddSoilSlope(
+                                AddRotation(
+                                    AddCokey(
+                                        AddLocation(
+                                            jsonObj,
+                                            location.Latitude,
+                                            location.Longitude),
+                                        location.Cokey),
+                                    rotation),
+                                location.Slope),
+                            location.SlopeLength)
                         .ToString();
 
                     scenarios.Add(scenario);
@@ -93,6 +97,14 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
         public JObject AddRotation(
             JObject scenario,
             string rotationJson);
+
+        public JObject AddSoilSlope(
+            JObject scenario,
+            double soilSlope);
+
+        public JObject AddSoilLength(
+            JObject scenario,
+            double soilLength);
 
         public string GetTemplate();
     }

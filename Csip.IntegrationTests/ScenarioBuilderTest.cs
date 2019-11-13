@@ -3,7 +3,9 @@ using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Xunit;
 
 namespace Csip.IntegrationTests
@@ -12,7 +14,49 @@ namespace Csip.IntegrationTests
     public class ScenarioBuilderTest
     {
         [Fact]
-        public void Wepp_Build_ValidInput_ExpectedResults()
+        public void Wepp_Build_ValidInput01Loc_ExpectedResults()
+        {
+            // Arrange
+            CsvHandler reader = new CsvHandler();
+            IScenarioBuilder sut = new WeppBuilder();
+
+            // Act
+            List<string> actual = sut.BuildScenarios(
+                reader.ReadLocationFile(@"Assets\location_verification_01.csv"),
+                sut.GetTemplate("wepp"),
+                sut.GetRotations());
+
+            // Assert
+            string strippedJson = Regex.Replace(actual.FirstOrDefault(), @"\s+", "");
+
+            // Check soil cokey, soil slope, soil length, rotation soil length
+            Assert.Contains("{\"name\":\"soilPtr\",\"value\":[\"17389235\"]}", strippedJson);
+            Assert.Contains("{\"name\":\"slope_steepness\",\"value\":4.0}", strippedJson);
+            Assert.Contains("{\"name\":\"length\",\"value\":350.0}", strippedJson);
+            Assert.Contains("{\"duration\":2,\"length\":350.0", strippedJson);
+        }
+
+        [Fact]
+        public void Weps_Build_ValidInput01Loc_ExpectedResult()
+        {
+            // Arrange
+            CsvHandler reader = new CsvHandler();
+            IScenarioBuilder sut = new WepsBuilder();
+
+            // Act
+            List<string> actual = sut.BuildScenarios(
+                reader.ReadLocationFile(@"Assets\location_verification_01.csv"),
+                sut.GetTemplate(),
+                sut.GetRotations());
+
+            // Assert
+            string strippedJson = Regex.Replace(actual.FirstOrDefault(), @"\s+", "");
+            // assert rectangle lengths, others?
+            Assert.Contains("{\"duration\":2,\"length\":350.0", strippedJson);
+        }
+
+        [Fact]
+        public void Wepp_Build_ValidInput10Locs_ExpectedResults()
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
@@ -26,10 +70,11 @@ namespace Csip.IntegrationTests
 
             // Assert
             Assert.NotNull(actual);
+            Assert.Equal(33, actual.Count);
         }
 
         [Fact]
-        public void Weps_Build_ValidInput_ExpectedResult()
+        public void Weps_Build_ValidInput10Locs_ExpectedResult()
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
@@ -43,6 +88,7 @@ namespace Csip.IntegrationTests
 
             // Assert
             Assert.NotNull(actual);
+            Assert.Equal(33, actual.Count);
         }
 
         [Fact]
