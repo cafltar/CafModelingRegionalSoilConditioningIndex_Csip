@@ -138,7 +138,15 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                         component.Name = element.GetProperty("value").GetString();
 
                     if (element.GetProperty("name").GetString() == "comppct_r")
-                        component.Percent = Convert.ToDouble(
+                        component.PercentOfMapUnit = Convert.ToDouble(
+                            element.GetProperty("value").GetString());
+
+                    if (element.GetProperty("name").GetString() == "slope_r")
+                        component.Slope = Convert.ToDouble(
+                            element.GetProperty("value").GetString());
+
+                    if (element.GetProperty("name").GetString() == "length_r")
+                        component.SlopeLength = Convert.ToDouble(
                             element.GetProperty("value").GetString());
                 }
 

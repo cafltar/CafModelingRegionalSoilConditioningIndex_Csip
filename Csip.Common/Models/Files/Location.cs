@@ -12,11 +12,23 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Mode
         
         [Index(1)]
         public double Longitude { get; set; }
-        
+
         [Index(2)]
-        public int Cokey { get; set; }
+        public int AnthromeKey { get; set; }
 
         [Index(3)]
-        public int AnthromeKey { get; set; }
+        public string Cokey { get; set; }
+
+        [Index(4)]
+        public double Slope { get; set; }
+
+        [Index(5)]
+        public double SlopeLength { get; set; }
+
+        [Index(6)]
+        public double PercentOfMapUnit { get; set; }
+
+        [Index(7)]
+        public string MapUnitName { get; set; }
     }
 }

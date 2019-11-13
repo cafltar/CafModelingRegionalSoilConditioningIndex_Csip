@@ -47,7 +47,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey.Tests
                             {
                                 Cokey = "17391360",
                                 Name = "Walla Walla",
-                                Percent = 85
+                                PercentOfMapUnit = 85
                             }
                         }
                     },
@@ -62,7 +62,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey.Tests
                             {
                                 Cokey = "17391361",
                                 Name = "Walla Walla",
-                                Percent = 75
+                                PercentOfMapUnit = 75
                             }
                         }
                     },
@@ -77,7 +77,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey.Tests
                             {
                                 Cokey = "17391362",
                                 Name = "Walla Walla",
-                                Percent = 75
+                                PercentOfMapUnit = 75
                             }
                         }
                     }

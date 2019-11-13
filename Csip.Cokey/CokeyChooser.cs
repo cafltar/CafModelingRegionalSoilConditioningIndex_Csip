@@ -17,10 +17,30 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
             string cokey = mapUnits.MapUnits
                 .OrderByDescending(m => m.Area)
                 .FirstOrDefault().Components
-                    .OrderByDescending(c => c.Percent)
+                    .OrderByDescending(c => c.PercentOfMapUnit)
                     .FirstOrDefault().Cokey;
 
             return cokey;
+        }
+
+        public Component GetDominateComponent(WweSoilParamsV2Results mapUnits)
+        {
+            Component component = mapUnits.MapUnits
+                .OrderByDescending(m => m.Area)
+                .FirstOrDefault().Components
+                .OrderByDescending(c => c.PercentOfMapUnit)
+                .FirstOrDefault();
+
+            return component;
+        }
+
+        public string GetDominateMapUnitName(WweSoilParamsV2Results mapUnits)
+        {
+            string name = mapUnits.MapUnits
+                .OrderByDescending(m => m.Area)
+                .FirstOrDefault().Name;
+
+            return name;
         }
     }
 }

@@ -47,14 +47,20 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
                 WweSoilParamsV2Results result = 
                     serviceHandler.ParseResultsJson(resultJson);
 
-                string cokey = cokeyChooser.GetDominateCokey(result);
+                //string cokey = cokeyChooser.GetDominateCokey(result);
+                Component component = cokeyChooser.GetDominateComponent(result);
+                string muname = cokeyChooser.GetDominateMapUnitName(result);
 
                 Location location = new Location()
                 {
-                    Cokey = Convert.ToInt32(cokey),
                     Latitude = point.Latitude,
                     Longitude = point.Longitude,
-                    AnthromeKey = point.Anthrome
+                    AnthromeKey = point.Anthrome,
+                    Cokey = component.Cokey,
+                    Slope = component.Slope,
+                    SlopeLength = component.SlopeLength,
+                    PercentOfMapUnit = component.PercentOfMapUnit,
+                    MapUnitName = muname
                 };
 
                 locations.Add(location);

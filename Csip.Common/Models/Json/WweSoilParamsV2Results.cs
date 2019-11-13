@@ -42,12 +42,18 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Mode
     {
         // A non-connotative string of characters used to uniquely identify a record in the Component table
         public string Cokey { get; set; }
-        
+
         // Name assigned to a component based on its range of properties
         public string Name { get; set; }
 
-        //The percentage of the component of the mapunit
-        public double Percent { get; set; }
+        // Slope RV: The difference in elevation between two points, expressed as a percentage of the distance between those points. (SSM)
+        public double Slope { get; set; }
+
+        // Calculated slope length (in feet)
+        public double SlopeLength { get; set; }
+
+        // The percentage of the component of the mapunit
+        public double PercentOfMapUnit { get; set; }
     }
 
 }

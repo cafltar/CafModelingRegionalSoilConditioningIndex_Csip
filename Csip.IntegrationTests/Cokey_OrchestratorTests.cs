@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.IntegrationTests
 {
-    public class OrchestratorTests
+    public class Cokey_OrchestratorTests
     {
         [Fact]
         public async void Run_ValidInput_ExpectedResults()

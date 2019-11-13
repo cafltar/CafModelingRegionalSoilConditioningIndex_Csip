@@ -88,7 +88,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 
         public JObject AddCokey(
             JObject scenario,
-            int cokey);
+            string cokey);
 
         public JObject AddRotation(
             JObject scenario,

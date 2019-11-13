@@ -41,14 +41,14 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 
         public JObject AddCokey(
             JObject scenario, 
-            int cokey)
+            string cokey)
         {
             JObject withCokey = scenario;
 
             foreach(var o in withCokey["parameter"])
             {
                 if (o["name"].ToString() == "soil")
-                    o["value"] = cokey.ToString();
+                    o["value"] = cokey;
             }
 
             return withCokey;

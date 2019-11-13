@@ -49,42 +49,42 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
             {
                 new Location()
                 {
-                    Cokey = 1000,
+                    Cokey = "1000",
                     Latitude = 45.0,
                     Longitude = -117.0,
                     AnthromeKey = 11
                 },
                 new Location()
                 {
-                    Cokey = 1001,
+                    Cokey = "1001",
                     Latitude = 45.1,
                     Longitude = -117.1,
                     AnthromeKey = 111
                 },
                 new Location()
                 {
-                    Cokey = 2000,
+                    Cokey = "2000",
                     Latitude = 46.0,
                     Longitude = -118.0,
                     AnthromeKey = 12
                 },
                 new Location()
                 {
-                    Cokey = 2001,
+                    Cokey = "2001",
                     Latitude = 46.1,
                     Longitude = -118.1,
                     AnthromeKey = 112
                 },
                 new Location()
                 {
-                    Cokey = 3000,
+                    Cokey = "3000",
                     Latitude = 47.0,
                     Longitude = -119.0,
                     AnthromeKey = 13
                 },
                 new Location()
                 {
-                    Cokey = 3001,
+                    Cokey = "3001",
                     Latitude = 47.1,
                     Longitude = -119.1,
                     AnthromeKey = 113
