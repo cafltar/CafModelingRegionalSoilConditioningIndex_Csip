@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Csip.Cokey\Csip.Cokey.csproj" />
     <ProjectReference Include="..\Csip.Common\Csip.Common.csproj" />
+    <ProjectReference Include="..\Csip.Engine\Csip.Engine.csproj" />
     <ProjectReference Include="..\Csip.Scenario\Csip.Scenario.csproj" />
   </ItemGroup>
 

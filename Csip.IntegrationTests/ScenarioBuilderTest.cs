@@ -4,13 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using Xunit;
 
 namespace Csip.IntegrationTests
 {
-    
+
     public class ScenarioBuilderTest
     {
         [Fact]
@@ -18,12 +17,12 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            IScenarioBuilder sut = new WeppBuilder();
+            IBuildErosionModel sut = new WeppBuilder();
 
             // Act
             List<string> actual = sut.BuildScenarios(
                 reader.ReadLocationFile(@"Assets\location_verification_01.csv"),
-                sut.GetTemplate("wepp"),
+                sut.GetTemplate(),
                 sut.GetRotations());
 
             // Assert
@@ -41,7 +40,7 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            IScenarioBuilder sut = new WepsBuilder();
+            IBuildErosionModel sut = new WepsBuilder();
 
             // Act
             List<string> actual = sut.BuildScenarios(
@@ -60,12 +59,12 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            IScenarioBuilder sut = new WeppBuilder();
+            IBuildErosionModel sut = new WeppBuilder();
 
             // Act
             List<string> actual = sut.BuildScenarios(
                 reader.ReadLocationFile(@"Assets\location_verification_10.csv"),
-                sut.GetTemplate("wepp"),
+                sut.GetTemplate(),
                 sut.GetRotations());
 
             // Assert
@@ -78,7 +77,7 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            IScenarioBuilder sut = new WepsBuilder();
+            IBuildErosionModel sut = new WepsBuilder();
 
             // Act
             List<string> actual = sut.BuildScenarios(
@@ -96,7 +95,7 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            IScenarioBuilder builder = new WepsBuilder();
+            IBuildErosionModel builder = new WepsBuilder();
             ScenarioHandler writer = new ScenarioHandler();
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
             string expectedZip = $"Assets\\output\\weps_{currentDate}.zip";
@@ -125,7 +124,7 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            IScenarioBuilder builder = new WepsBuilder();
+            IBuildErosionModel builder = new WeppBuilder();
             ScenarioHandler writer = new ScenarioHandler();
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
             string expectedZip = $"Assets\\output\\wepp_{currentDate}.zip";

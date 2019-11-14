@@ -1,15 +1,9 @@
-﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 {
-    public class WeppBuilder: IScenarioBuilder
+    public class WeppBuilder: IBuildErosionModel
     {
         // TODO: maybe use enum instead of path?
         public string GetTemplate()

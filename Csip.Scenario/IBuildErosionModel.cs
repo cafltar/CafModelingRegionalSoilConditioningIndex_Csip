@@ -1,16 +1,14 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
 using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 {
-    public interface IScenarioBuilder
+    public interface IBuildErosionModel
     {
         // TODO: maybe use enum instead of path?
-        public string GetTemplate(string templateName)
+        /*public string GetTemplate(string templateName)
         {
 
             var template = templateName switch
@@ -20,7 +18,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
                 _ => throw new ArgumentException("templateName not valid"),
             };
             return template;
-        }
+        }*/
 
         public Dictionary<int, List<string>> GetRotations()
         {
@@ -50,7 +48,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
         }
 
         public List<string> BuildScenarios(
-            List<Location> locations,
+            List<CsipLocation> locations,
             string templateJson,
             Dictionary<int, List<string>> rotations)
         {
@@ -58,7 +56,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 
             JObject jsonObj = JObject.Parse(templateJson);
 
-            foreach (Location location in locations)
+            foreach (CsipLocation location in locations)
             {
                 foreach (string rotation in rotations[location.AnthromeKey])
                 {

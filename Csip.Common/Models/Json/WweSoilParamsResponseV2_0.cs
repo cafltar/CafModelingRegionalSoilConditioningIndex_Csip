@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json
 {
-    public class WweSoilParamsV2Results
+    public class WweSoilParamsResponseV2_0
     {
         public MapUnitMeta MapUnitMeta { get; set; }
         public List<MapUnit> MapUnits { get; set; }

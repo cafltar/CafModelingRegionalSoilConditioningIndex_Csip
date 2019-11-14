@@ -1,10 +1,8 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
 using CsvHelper;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
 {
@@ -22,7 +20,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             }
         }
 
-        public void WriteLocationFile(string filePath, List<Location> locations)
+        public void WriteLocationFile(string filePath, List<CsipLocation> locations)
         {
             using (var writer = new StreamWriter(filePath))
             using (var csv = new CsvWriter(writer))
@@ -31,13 +29,13 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             }
         }
 
-        public List<Location> ReadLocationFile(string filePath)
+        public List<CsipLocation> ReadLocationFile(string filePath)
         {
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader))
             {
                 var records =
-                    csv.GetRecords<Location>().ToList();
+                    csv.GetRecords<CsipLocation>().ToList();
 
                 return records;
             }

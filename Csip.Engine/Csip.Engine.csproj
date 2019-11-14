@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Csip.Common\Csip.Common.csproj" />
+    <ProjectReference Include="..\Csip.Scenario\Csip.Scenario.csproj" />
+  </ItemGroup>
+
+</Project>

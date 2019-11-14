@@ -1,11 +1,9 @@
 ﻿using CsvHelper.Configuration.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models
 {
-    public class Location
+    public class CsipLocation
     {
         [Index(0)]
         public double Latitude { get; set; }

@@ -1,22 +1,21 @@
-﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO;
+﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Helpers;
+using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Services;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
+namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
 {
-    public class Orchestrator
+    public class FlexCroppingLocationToCsipLocation
     {
         private readonly CsvHandler fileHandler;
         private readonly WweSoilParamsV2_0 serviceHandler;
         private readonly PointToPolygonConverter converter;
         private readonly CokeyChooser cokeyChooser;
 
-        public Orchestrator(
+        public FlexCroppingLocationToCsipLocation(
             CsvHandler fileHandler,
             WweSoilParamsV2_0 serviceHandler,
             PointToPolygonConverter converter,
@@ -30,7 +29,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
 
         public async Task<bool> Run(string inputFilePath, string outputFilePath)
         {
-            List<Location> locations = new List<Location>();
+            List<CsipLocation> locations = new List<CsipLocation>();
 
             // Read file with FlexCropping locations
             List<FlexCroppingLocation> points = 
@@ -44,14 +43,14 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
 
                 string resultJson = await serviceHandler.Post(polygonString);
 
-                WweSoilParamsV2Results result = 
+                WweSoilParamsResponseV2_0 result = 
                     serviceHandler.ParseResultsJson(resultJson);
 
                 //string cokey = cokeyChooser.GetDominateCokey(result);
                 Component component = cokeyChooser.GetDominateComponent(result);
                 string muname = cokeyChooser.GetDominateMapUnitName(result);
 
-                Location location = new Location()
+                CsipLocation location = new CsipLocation()
                 {
                     Latitude = point.Latitude,
                     Longitude = point.Longitude,

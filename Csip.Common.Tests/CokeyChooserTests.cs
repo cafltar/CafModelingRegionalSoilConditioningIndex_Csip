@@ -4,6 +4,7 @@ using System.Text;
 using Xunit;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json;
+using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Helpers;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey.Tests
 {

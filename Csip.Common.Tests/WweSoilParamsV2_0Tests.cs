@@ -51,7 +51,7 @@ namespace Csip.Common.Tests
             //WweSoilParamsV2Results expected = new WweSoilParamsV2Results();
 
             // Act
-            WweSoilParamsV2Results actual = sut.ParseResultsJson(json);
+            WweSoilParamsResponseV2_0 actual = sut.ParseResultsJson(json);
 
             // Assert
             Assert.Equal(10, actual.MapUnits.Count);

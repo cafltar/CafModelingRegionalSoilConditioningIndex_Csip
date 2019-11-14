@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Cokey", "Csip.Cokey\Csip.Cokey.csproj", "{674C324F-38B1-4BE1-912E-6F3CD99BB66C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Scenario", "Csip.Scenario\Csip.Scenario.csproj", "{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Cokey.Tests", "Csip.Cokey.Tests\Csip.Cokey.Tests.csproj", "{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Scenario.Tests", "Csip.Scenario.Tests\Csip.Scenario.Tests.csproj", "{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}"
 EndProject
@@ -15,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Common", "Csip.Common\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.Common.Tests", "Csip.Common.Tests\Csip.Common.Tests.csproj", "{70714B38-A03D-421E-848C-FF221D455A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.IntegrationTests", "Csip.IntegrationTests\Csip.IntegrationTests.csproj", "{3BDC9C37-5E0D-470D-96EE-DE38793ABDB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csip.IntegrationTests", "Csip.IntegrationTests\Csip.IntegrationTests.csproj", "{3BDC9C37-5E0D-470D-96EE-DE38793ABDB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csip.Engine", "Csip.Engine\Csip.Engine.csproj", "{7B9A9B75-E355-416A-ACE3-14EB08826314}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,18 +21,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{674C324F-38B1-4BE1-912E-6F3CD99BB66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{674C324F-38B1-4BE1-912E-6F3CD99BB66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{674C324F-38B1-4BE1-912E-6F3CD99BB66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{674C324F-38B1-4BE1-912E-6F3CD99BB66C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DE37AAA-8FD3-4EA4-8D19-BAA4325EA34B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ABE1206-7AEB-4C9C-AB0D-5ED3DB37D70C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FFA231D-0C7B-40F4-98DA-49FCBF128D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +41,10 @@ Global
 		{3BDC9C37-5E0D-470D-96EE-DE38793ABDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BDC9C37-5E0D-470D-96EE-DE38793ABDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BDC9C37-5E0D-470D-96EE-DE38793ABDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9A9B75-E355-416A-ACE3-14EB08826314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9A9B75-E355-416A-ACE3-14EB08826314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9A9B75-E355-416A-ACE3-14EB08826314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9A9B75-E355-416A-ACE3-14EB08826314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

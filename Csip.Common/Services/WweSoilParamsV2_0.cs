@@ -43,11 +43,11 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
             }  
         }
 
-        public WweSoilParamsV2Results ParseResultsJson(string jsonResult)
+        public WweSoilParamsResponseV2_0 ParseResultsJson(string jsonResult)
         {
             // TODO: Read error message, include in returned object
 
-            WweSoilParamsV2Results result = new WweSoilParamsV2Results();
+            WweSoilParamsResponseV2_0 result = new WweSoilParamsResponseV2_0();
 
             var options = new JsonDocumentOptions
             {
@@ -68,9 +68,9 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
             return result;
         }
 
-        private WweSoilParamsV2Results ParseResultElement(JsonProperty resultElement)
+        private WweSoilParamsResponseV2_0 ParseResultElement(JsonProperty resultElement)
         {
-            WweSoilParamsV2Results results = new WweSoilParamsV2Results();
+            WweSoilParamsResponseV2_0 results = new WweSoilParamsResponseV2_0();
 
             foreach(var element in resultElement.Value.EnumerateArray())
             {

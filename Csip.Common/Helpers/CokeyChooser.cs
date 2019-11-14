@@ -1,10 +1,7 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
-namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Cokey
+namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Helpers
 {
     public class CokeyChooser
     {

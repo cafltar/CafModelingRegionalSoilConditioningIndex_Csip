@@ -1,8 +1,6 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Xunit;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Tests
@@ -13,7 +11,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
         public void GetRotations_ValidInput_ExpectedResults()
         {
             // Arrange
-            IScenarioBuilder sut = new WeppBuilder();
+            IBuildErosionModel sut = new WeppBuilder();
 
             // Act
             var actual = sut.GetRotations();
@@ -28,8 +26,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
         public void Build_ValidInput_ExpectedResults()
         {
             // Arrange
-            IScenarioBuilder sut = new WeppBuilder();
-            List<Location> locations = GetMockLocations();
+            IBuildErosionModel sut = new WeppBuilder();
+            List<CsipLocation> locations = GetMockLocations();
             string template = File.ReadAllText(@"Assets\templateWepp.json");
             Dictionary<int, List<string>> rotations = GetMockRotations();
 
@@ -43,46 +41,46 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
             Assert.Equal(20, actual.Count);
         }
 
-        private List<Location> GetMockLocations()
+        private List<CsipLocation> GetMockLocations()
         {
-            List<Location> locations = new List<Location>()
+            List<CsipLocation> locations = new List<CsipLocation>()
             {
-                new Location()
+                new CsipLocation()
                 {
                     Cokey = "1000",
                     Latitude = 45.0,
                     Longitude = -117.0,
                     AnthromeKey = 11
                 },
-                new Location()
+                new CsipLocation()
                 {
                     Cokey = "1001",
                     Latitude = 45.1,
                     Longitude = -117.1,
                     AnthromeKey = 111
                 },
-                new Location()
+                new CsipLocation()
                 {
                     Cokey = "2000",
                     Latitude = 46.0,
                     Longitude = -118.0,
                     AnthromeKey = 12
                 },
-                new Location()
+                new CsipLocation()
                 {
                     Cokey = "2001",
                     Latitude = 46.1,
                     Longitude = -118.1,
                     AnthromeKey = 112
                 },
-                new Location()
+                new CsipLocation()
                 {
                     Cokey = "3000",
                     Latitude = 47.0,
                     Longitude = -119.0,
                     AnthromeKey = 13
                 },
-                new Location()
+                new CsipLocation()
                 {
                     Cokey = "3001",
                     Latitude = 47.1,
