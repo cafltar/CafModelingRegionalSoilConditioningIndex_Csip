@@ -87,15 +87,12 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                             element.GetProperty("value").GetString());
                         break;
                     case "crlmod":
-                        results.RotationName = element.GetProperty("value")
+                        results.RotationName = element
+                            .GetProperty("value")
                             .GetProperty("rotationFiles")
-                            .EnumerateArray()
-                            .First()
-                            .EnumerateObject()
-                            .First()
-                            .Value
-                            .EnumerateObject()
-                            .First(x => x.Name == "name").Value.ToString();
+                            .EnumerateArray().First()
+                            .GetProperty("rotation")
+                            .GetProperty("name").GetString();
                         break;
                 }
             }
