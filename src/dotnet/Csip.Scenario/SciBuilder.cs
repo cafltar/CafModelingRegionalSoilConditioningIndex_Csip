@@ -46,7 +46,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 
             // Note: The components of the name are split using double underscore (__), not single, due to an underscore being used in RotationName
             string scenarioName =
-                $"{erosionParameters.Latitude.ToString("#.####")}__{erosionParameters.Longitude.ToString("#.####")}__{erosionParameters.RotationName}";
+                $"{erosionParameters.Latitude.ToString()}__{erosionParameters.Longitude.ToString()}__{erosionParameters.RotationName}";
 
             // Set name
             withParameters["metainfo"]["name"] = scenarioName;

@@ -23,7 +23,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
 
             // Assert
             Assert.Single(actual);
-            Assert.Contains("47.0531__-117.2407__Transition_NoTill", actual.First());
+            Assert.Contains("47.053055__-117.24074__Transition_NoTill", actual.First());
 
         }
 
