@@ -21,7 +21,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             }
         }
 
-        public void WriteLocationFile(string filePath, List<CsipLocation> locations)
+        public void WriteCsipLocationFile(string filePath, List<CsipLocation> locations)
         {
             using (var writer = new StreamWriter(filePath))
             using (var csv = new CsvWriter(writer))
@@ -30,7 +30,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             }
         }
 
-        public List<CsipLocation> ReadLocationFile(string filePath)
+        public List<CsipLocation> ReadCsipLocationFile(string filePath)
         {
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader))
@@ -62,6 +62,17 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
                     csv.GetRecords<ErosionParameters>().ToList();
 
                 return records;
+            }
+        }
+
+        public void WriteExperimentalResultsParameters(
+            string filePath,
+            List<ExperimentalResults> experimentalResults)
+        {
+            using (var writer = new StreamWriter(filePath))
+            using (var csv = new CsvWriter(writer))
+            {
+                csv.WriteRecords(experimentalResults);
             }
         }
     }

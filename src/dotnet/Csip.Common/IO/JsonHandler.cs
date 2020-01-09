@@ -47,5 +47,24 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
 
             return results;
         }
+
+        public List<SciResponseV2_1> ReadSciResponseV2_1Files(
+            string filePath,
+            SciV2_1 service)
+        {
+            string[] files = Directory.GetFiles(filePath, "*.json");
+
+            List<SciResponseV2_1> responses = new List<SciResponseV2_1>();
+
+            foreach(var file in files)
+            {
+                string json = File.ReadAllText(file);
+                SciResponseV2_1 response = service.ParseResultsJson(json);
+
+                responses.Add(response);
+            }
+
+            return responses;
+        }
     }
 }
