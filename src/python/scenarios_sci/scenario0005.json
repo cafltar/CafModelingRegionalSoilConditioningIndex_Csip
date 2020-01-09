@@ -1,0 +1,34 @@
+{
+  "metainfo": {
+    "name": "46.2284__-116.2715__Annual_ReducedTillage",
+    "description": "SCI",
+    "state": "Development",
+    "service_url": "http://csip.engr.colostate.edu:8083/csip-sq/m/sci/2.1"
+  },
+  "parameter": [
+    {
+      "name": "erosion_water",
+      "value": 0.9879530072212219
+    },
+    {
+      "name": "water_om",
+      "value": 0.1817999929189682
+    },
+    {
+      "name": "water_fo",
+      "value": 0.5116270184516907
+    },
+    {
+      "name": "wind_om",
+      "value": 0.1817999929189682
+    },
+    {
+      "name": "wind_fo",
+      "value": 0.5116270184516907
+    },
+    {
+      "name": "erosion_wind",
+      "value": 0.9947
+    }
+  ]
+}

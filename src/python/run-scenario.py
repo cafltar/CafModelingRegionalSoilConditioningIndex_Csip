@@ -52,12 +52,16 @@ def cb(client, file):
 
 if __name__ == "__main__":
     config = configparser.RawConfigParser()
-    config.read('secrets.ini')
+    #config.read('secrets_wepp.ini')
+    #config.read('secrets_weps.ini')
+    config.read('secrets_sci.ini')
     
-    download_extract_scenarios(config['parameters']['scenarioUrl'], 'scenarios')
+    #download_extract_scenarios(
+    #    config['parameters']['scenarioUrl'],
+    #    config['parameters']['workingDir'])
     
     run_scenarios(
-        'http://csip.engr.colostate.edu:8086/csip-ps/p/pubsub/8086/csip-weps/m/weps/5.2', 
+        config['parameters']['csipServiceUrl'], 
         config['secrets']['webHookUrl'], 
         config['secrets']['csipToken'], 
-        'scenarios')
+        config['parameters']['workingDir'])
