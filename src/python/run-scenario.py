@@ -53,7 +53,9 @@ def cb(client, file):
 if __name__ == "__main__":
     config = configparser.RawConfigParser()
     config.read('secrets.ini')
+    
     download_extract_scenarios(config['parameters']['scenarioUrl'], 'scenarios')
+    
     run_scenarios(
         'http://csip.engr.colostate.edu:8086/csip-ps/p/pubsub/8086/csip-weps/m/weps/5.2', 
         config['secrets']['webHookUrl'], 
