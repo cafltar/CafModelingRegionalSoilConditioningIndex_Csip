@@ -147,5 +147,33 @@ namespace Csip.IntegrationTests
             if (Directory.Exists(writePath))
                 Directory.Delete(writePath, true);
         }
+
+        [Fact]
+        public void SciBuilder_WritesScenarioFiles_FromVerificationLocations()
+        {
+            // Arrange
+            CsvHandler reader = new CsvHandler();
+            SciBuilder builder = new SciBuilder();
+            ScenarioHandler writer = new ScenarioHandler();
+            string currentDate = DateTime.Now.ToString("yyyyMMdd");
+            string writePath = $"Assets\\output\\sci_{currentDate}";
+            string expectedZip = $"Assets\\output\\sci_{currentDate}.zip";
+
+            // Act
+            List<string> actual = builder.BuildScenarios(
+                reader.ReadErosionParameters(@"Assets\erosion-params-output.csv"),
+                builder.GetTemplate());
+
+            writer.WriteScenariosZip(actual, writePath);
+
+            // Assert
+            Assert.True(File.Exists(expectedZip));
+
+            // Cleanup
+            if (File.Exists(expectedZip))
+                File.Delete(expectedZip);
+            if (Directory.Exists(writePath))
+                Directory.Delete(writePath, true);
+        }
     }
 }

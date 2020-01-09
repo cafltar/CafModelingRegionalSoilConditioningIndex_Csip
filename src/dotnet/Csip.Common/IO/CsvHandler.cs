@@ -52,5 +52,17 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
                 csv.WriteRecords(erosionParameters);
             }
         }
+
+        public List<ErosionParameters> ReadErosionParameters(string filePath)
+        {
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader))
+            {
+                var records =
+                    csv.GetRecords<ErosionParameters>().ToList();
+
+                return records;
+            }
+        }
     }
 }
