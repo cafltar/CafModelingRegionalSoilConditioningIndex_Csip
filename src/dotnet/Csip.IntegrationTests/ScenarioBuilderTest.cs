@@ -21,7 +21,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = sut.BuildScenarios(
-                reader.ReadLocationFile(@"Assets\location_verification_01.csv"),
+                reader.ReadCsipLocationFile(@"Assets\location_verification_01.csv"),
                 sut.GetTemplate(),
                 sut.GetRotations());
 
@@ -44,7 +44,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = sut.BuildScenarios(
-                reader.ReadLocationFile(@"Assets\location_verification_01.csv"),
+                reader.ReadCsipLocationFile(@"Assets\location_verification_01.csv"),
                 sut.GetTemplate(),
                 sut.GetRotations());
 
@@ -63,7 +63,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = sut.BuildScenarios(
-                reader.ReadLocationFile(@"Assets\location_verification_10.csv"),
+                reader.ReadCsipLocationFile(@"Assets\location_verification_10.csv"),
                 sut.GetTemplate(),
                 sut.GetRotations());
 
@@ -81,7 +81,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = sut.BuildScenarios(
-                reader.ReadLocationFile(@"Assets\location_verification_10.csv"),
+                reader.ReadCsipLocationFile(@"Assets\location_verification_10.csv"),
                 sut.GetTemplate(),
                 sut.GetRotations());
 
@@ -103,7 +103,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = builder.BuildScenarios(
-                reader.ReadLocationFile(@"Assets\location_verification_10.csv"),
+                reader.ReadCsipLocationFile(@"Assets\location_verification_10.csv"),
                 builder.GetTemplate(),
                 builder.GetRotations());
 
@@ -132,7 +132,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = builder.BuildScenarios(
-                reader.ReadLocationFile(@"Assets\location_verification_10.csv"),
+                reader.ReadCsipLocationFile(@"Assets\location_verification_10.csv"),
                 builder.GetTemplate(),
                 builder.GetRotations());
 

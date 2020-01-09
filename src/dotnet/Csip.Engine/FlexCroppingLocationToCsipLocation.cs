@@ -66,7 +66,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
             }
 
             // Write file
-            fileHandler.WriteLocationFile(outputFilePath, locations);
+            fileHandler.WriteCsipLocationFile(outputFilePath, locations);
 
             return true;
         }
