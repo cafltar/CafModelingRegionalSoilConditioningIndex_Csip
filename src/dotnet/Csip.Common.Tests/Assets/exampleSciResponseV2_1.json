@@ -1,0 +1,47 @@
+{
+  "metainfo": {
+    "name": "45.0001__-117.3001__Annual_NoTill",
+    "description": "SCI",
+    "state": "Development",
+    "service_url": "http://csip.engr.colostate.edu:8083/csip-sq/m/sci/2.1",
+    "status": "Finished",
+    "suid": "53edca93-3304-11ea-9641-e599c84e312b",
+    "cloud_node": "10.38.0.9",
+    "request_ip": "199.133.207.245",
+    "tstamp": "2020-01-09 10:20:26",
+    "cpu_time": 3,
+    "expiration_date": "2020-01-09 10:20:56"
+  },
+  "parameter": [
+    {
+      "name": "erosion_water",
+      "value": 0
+    },
+    {
+      "name": "water_om",
+      "value": 0
+    },
+    {
+      "name": "water_fo",
+      "value": 0
+    },
+    {
+      "name": "wind_om",
+      "value": 0
+    },
+    {
+      "name": "wind_fo",
+      "value": 0
+    },
+    {
+      "name": "erosion_wind",
+      "value": 0
+    }
+  ],
+  "result": [
+    {
+      "name": "sci_total",
+      "value": 0.2
+    }
+  ]
+}
