@@ -24,8 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\exampleWeppResult.json">
+    <None Update="Assets\exampleWeppResultV3_1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\exampleWepsResultV5_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Assets\verification_10.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

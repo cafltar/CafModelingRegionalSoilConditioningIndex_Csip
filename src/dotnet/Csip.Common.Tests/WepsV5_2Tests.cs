@@ -8,23 +8,23 @@ using Xunit;
 
 namespace Csip.Common.Tests
 {
-    public class WeppV3_1Tests
+    public class WepsV5_2Tests
     {
         [Fact]
         public void ParseResults_ValidJson_ExpectedResults()
         {
             // Arrange
-            var sut = new WeppV3_1();
+            var sut = new WepsV5_2();
             string json = File.ReadAllText(
-                @"Assets\exampleWeppResultV3_1.json");
+                @"Assets\exampleWepsResultV5_2.json");
 
             // Act
-            WeppResponseV3_1 actual = sut.ParseResultsJson(json);
+            WepsResponseV5_2 actual = sut.ParseResultsJson(json);
 
             // Assert
-            Assert.Equal(0.002899999963119626, actual.SoilLoss);
-            Assert.Equal("Transition_NoTill", actual.RotationName);
-            Assert.Equal("8af8f7ab-064a-11ea-a464-7b605541b058", actual.Suid);
+            Assert.Equal("95abb930-3246-11ea-bc15-6386ee4990d5", actual.Suid);
+            Assert.Equal("GrainFallow_HeavyTillage", actual.RotationName);
+            Assert.Equal(0.223490870061, actual.WindErosion);
         }
     }
 }

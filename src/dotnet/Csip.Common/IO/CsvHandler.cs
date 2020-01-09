@@ -1,4 +1,5 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
+using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Files;
 using CsvHelper;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +39,17 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
                     csv.GetRecords<CsipLocation>().ToList();
 
                 return records;
+            }
+        }
+
+        public void WriteErosionParameters(
+            string filePath,
+            List<ErosionParameters> erosionParameters)
+        {
+            using (var writer = new StreamWriter(filePath))
+            using (var csv = new CsvWriter(writer))
+            {
+                csv.WriteRecords(erosionParameters);
             }
         }
     }
