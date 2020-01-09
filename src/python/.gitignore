@@ -1,3 +1,4 @@
 secrets*.ini
 .vscode/
 working/
+scenarios_*
