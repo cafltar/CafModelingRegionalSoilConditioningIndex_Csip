@@ -1,6 +1,6 @@
 # Script based on modified version of Publish/Subscribe Jupyter Notebook by CSIP: https://colab.research.google.com/drive/1hfm0BhQMGGLudlQhJnvyhw73ciqXW6SW#scrollTo=Sq__FsvrKfuo
 import os, sys
-import wget # conda install -c anaconda pywget
+#import wget # conda install -c anaconda pywget
 from pathlib import Path
 from zipfile import ZipFile
 #pip install csip --no-cache-dir --upgrade
@@ -10,17 +10,23 @@ import configparser
 
 # scenario_url: string to zip file containing scenario files. Expects zip file name to be {model type}_{creation date}.zip and contain files of format: scenario*.json
 # out_dir: string for directory name where scenario zip file will be downloaded and extracted
-def download_extract_scenarios(scenario_url, out_dir):
-    # Populate payloads
-    Path(out_dir).mkdir(parents=True, exist_ok=True)
-
-    filename = wget.download(scenario_url, out = out_dir)
-
-    #!unzip -u wepp_20191113.zip
-    with ZipFile(filename, 'r') as zipObj:
-        zipObj.extractall(out_dir)
+#def download_extract_scenarios(scenario_url, out_dir):
+#    # Populate payloads
+#    Path(out_dir).mkdir(parents=True, exist_ok=True)
+#
+#    filename = wget.download(scenario_url, out = out_dir)
+#
+#    #!unzip -u wepp_20191113.zip
+#    with ZipFile(filename, 'r') as zipObj:
+#        zipObj.extractall(out_dir)
 
 def run_scenarios(csip_ps_url, webhook_url, bearer_token, scenario_dir):
+    print('---- Running with following parameters: ----')
+    print('csip_ps_url: ' + csip_ps_url)
+    print('webhook_url: ' + webhook_url)
+    print('bearer_token: ' + bearer_token)
+    print('scenario_dir: ' + scenario_dir)
+
     # Get the catalog
     catalog = Client.get_catalog('http://csip.engr.colostate.edu:8086/csip-ps/')
 
@@ -55,12 +61,8 @@ if __name__ == "__main__":
 
     config.read(sys.argv[1])
     
-    download_extract_scenarios(
-        config['parameters']['scenarioUrl'],
-        config['parameters']['workingDir'])
-    
     run_scenarios(
         config['parameters']['csipServiceUrl'], 
         config['secrets']['webHookUrl'], 
         config['secrets']['csipToken'], 
-        config['parameters']['workingDir'])
+        config['parameters']['scenariosDir'])
