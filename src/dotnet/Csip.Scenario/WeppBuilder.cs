@@ -5,15 +5,6 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 {
     public class WeppBuilder: IBuildErosionModel
     {
-        // TODO: maybe use enum instead of path?
-        public string GetTemplate()
-        {
-            string template = 
-                File.ReadAllText(@"Assets\templates\templateWepp.json");              
-
-            return template;
-        }
-
         public JObject AddLocation(
             JObject scenario,
             double latitude,
@@ -103,6 +94,15 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
             }
 
             return withSoilLength;
+        }
+
+        // Copied template from assets folder, minified and escaped, pasted here
+        public string GetTemplate()
+        {
+            string template =
+                "{\"metainfo\":{\"request-results\":[\"SLOPE_DELIVERY\",\"SLOPE_T_VALUE\",\"SLOPE_DEGRAD\"],\"mode\":\"sync\"},\"parameter\":[{\"name\":\"climateDataVersion\",\"value\":\"2015\"},{\"name\":\"usePRISM\",\"value\":true},{\"name\":\"latitude\",\"value\":47.053055},{\"name\":\"longitude\",\"value\":-117.24074},{\"name\":\"state\",\"value\":\"WA\"},{\"name\":\"stationName\",\"value\":\"Whitman County, Washington\"},{\"name\":\"aspect\",\"value\":180},{\"name\":\"width\",\"value\":50},{\"name\":\"slope_steepness\",\"value\":16},{\"name\":\"length\",\"value\":175},{\"name\":\"slope_type\",\"value\":\"Uniform\"},{\"name\":\"soilPtr\",\"value\":[\"17517364\"]},{\"name\":\"contour\",\"value\":\"(none)\"},{\"name\":\"crlmod\",\"value\":{\"rotationFiles\":[{\"rotation\":{\"duration\":1,\"length\":175,\"managements\":[{\"events\":[{\"date\":\"2020-05-15\",\"interval\":false,\"operation\":{\"id\":\"23173\",\"name\":\"Sprayer, post emergence\"},\"residue\":{\"id\":\"156\",\"name\":\"weed residue; 0-3 mo\",\"res_added\":100}},{\"date\":\"2020-06-15\",\"interval\":false,\"operation\":{\"id\":\"23169\",\"name\":\"Sprayer, post emerge, fungicide\"}},{\"date\":\"2020-07-01\",\"interval\":false,\"operation\":{\"id\":\"23169\",\"name\":\"Sprayer, post emerge, fungicide\"}},{\"date\":\"2020-08-15\",\"interval\":false,\"operation\":{\"id\":\"23269\",\"name\":\"Harvest, killing crop 50pct standing stubble\"}},{\"date\":\"2020-09-16\",\"interval\":false,\"operation\":{\"add_residue\":false,\"begin_growth\":false,\"defaultResidueAdded\":0,\"id\":\"23517\",\"kill_crop\":true,\"name\":\"Plow, moldboard, 6 to 12 inch deep\"}},{\"date\":\"2020-09-17\",\"interval\":false,\"operation\":{\"id\":\"23422\",\"name\":\"Disk, tandem secondary\"}},{\"date\":\"2020-09-19\",\"interval\":false,\"operation\":{\"id\":\"23131\",\"name\":\"Fert applic. anhyd knife 12 inch spacing, coil tine har\"}},{\"crop\":{\"id\":\"972\",\"name\":\"Wheat, winter, grain\",\"yield\":85,\"yieldUnit\":\"bu/ac\"},\"date\":\"2020-09-20\",\"interval\":false,\"operation\":{\"id\":\"23331\",\"name\":\"Drill or air seeder, double disk\"}}],\"id\":null,\"name\":\"Wheat, winter, early plant, conv, fplow, Z47\",\"path\":\"Edited CMZ 47\\\\a.Single Year Single Crop Templates\",\"stir\":0}],\"name\":\"z47 Winter Wheat STIR-124\"}}]}}]}";
+
+            return template;
         }
     }
 }
