@@ -52,13 +52,12 @@ def cb(client, file):
 
 if __name__ == "__main__":
     config = configparser.RawConfigParser()
-    #config.read('secrets_wepp.ini')
-    #config.read('secrets_weps.ini')
-    config.read('secrets_sci.ini')
+
+    config.read(sys.argv[1])
     
-    #download_extract_scenarios(
-    #    config['parameters']['scenarioUrl'],
-    #    config['parameters']['workingDir'])
+    download_extract_scenarios(
+        config['parameters']['scenarioUrl'],
+        config['parameters']['workingDir'])
     
     run_scenarios(
         config['parameters']['csipServiceUrl'], 
