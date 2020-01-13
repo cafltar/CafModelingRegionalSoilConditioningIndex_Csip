@@ -48,25 +48,6 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
             return results;
         }
 
-        private WepsResponseV5_2 MergeResults(
-            WepsResponseV5_2 metainfo,
-            WepsResponseV5_2 parameters,
-            WepsResponseV5_2 result)
-        {
-            WepsResponseV5_2 results = new WepsResponseV5_2()
-            {
-                Suid = metainfo.Suid,
-                Status = metainfo.Status,
-                Latitude = parameters.Latitude,
-                Longitude = parameters.Longitude,
-                RotationName = parameters.RotationName,
-                WindErosion = result.WindErosion,
-                SciErosionFactor = result.SciErosionFactor
-            };
-
-            return results;
-        }
-
         private WepsResponseV5_2 ParseMetainfoElement(
             JsonProperty metainfoElement)
         {
@@ -135,12 +116,43 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                         result.WindErosion = element.GetProperty("value").GetDouble();
                         break;
                     case "sci_er_factor":
-                        result.SciErosionFactor = element.GetProperty("value").GetDouble();
+                        result.ER = element.GetProperty("value").GetDouble();
+                        break;
+                    case "sci_om_factor":
+                        result.OM = element.GetProperty("value").GetDouble();
+                        break;
+                    case "sci_fo_factor":
+                        result.FO = element.GetProperty("value").GetDouble();
+                        break;
+                    case "avg_all_stir":
+                        result.Stir = element.GetProperty("value").GetDouble();
                         break;
                 }
             }
 
             return result;
+        }
+
+        private WepsResponseV5_2 MergeResults(
+            WepsResponseV5_2 metainfo,
+            WepsResponseV5_2 parameters,
+            WepsResponseV5_2 result)
+        {
+            WepsResponseV5_2 results = new WepsResponseV5_2()
+            {
+                Suid = metainfo.Suid,
+                Status = metainfo.Status,
+                Latitude = parameters.Latitude,
+                Longitude = parameters.Longitude,
+                RotationName = parameters.RotationName,
+                WindErosion = result.WindErosion,
+                ER = result.ER,
+                FO = result.FO,
+                OM = result.OM,
+                Stir = result.Stir
+            };
+
+            return results;
         }
     }
 }

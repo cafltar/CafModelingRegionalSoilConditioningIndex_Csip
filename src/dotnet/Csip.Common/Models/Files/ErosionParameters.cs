@@ -2,6 +2,7 @@
 {
     /// <summary>
     /// A combination of values from WEPP and WEPS responses as needed for calculating soil conditioning index using the SCI service
+    /// Note: At time of writing, SCI is calc using values from WEPP model for both WaterOM and WindOM, but values here are from the respective models
     /// </summary>
     public class ErosionParameters
     {

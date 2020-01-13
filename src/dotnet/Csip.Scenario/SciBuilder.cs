@@ -53,6 +53,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
             foreach(var p in withParameters["parameter"])
             {
                 string paramName = p["name"].ToString();
+                // Note: We're using the organic matter value from WEPP, so overriding wind_om with value from WEPP (wind_om = WaterOM)
                 switch(paramName)
                 {
                     case "erosion_water":
@@ -65,7 +66,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
                         p["value"] = erosionParameters.WaterFO;
                         break;
                     case "wind_om":
-                        p["value"] = erosionParameters.WindOM;
+                        p["value"] = erosionParameters.WaterOM;
                         break;
                     case "wind_fo":
                         p["value"] = erosionParameters.WindFO;

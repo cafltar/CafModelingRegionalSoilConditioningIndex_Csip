@@ -70,6 +70,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
 
                 ExperimentalResults result = new ExperimentalResults()
                 {
+                    // TODO: Create new column for actual WindOM and value used by SCI service?
                     Latitude = sciResponse.Latitude,
                     Longitude = sciResponse.Longitude,
                     RotationName = sciResponse.RotationName,

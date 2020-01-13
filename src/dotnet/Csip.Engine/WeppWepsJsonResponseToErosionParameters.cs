@@ -87,11 +87,11 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
                 Longitude = weppResponse.Longitude,
                 RotationName = weppResponse.RotationName,
                 WaterOM = weppResponse.OM,
-                WindOM = weppResponse.OM,
+                WindOM = wepsResponse.OM,
                 WaterFO = weppResponse.FO,
-                WindFO = weppResponse.FO,
+                WindFO = wepsResponse.FO,
                 WaterErosion = weppResponse.ER,
-                WindErosion = wepsResponse.SciErosionFactor
+                WindErosion = wepsResponse.ER
             };
 
             return result;

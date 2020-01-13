@@ -1,7 +1,7 @@
 ﻿namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Files
 {
     /// <summary>
-    /// A combination of all variables as needed for analysis
+    /// A combination of all variables used to calculate SciTotal
     /// </summary>
     public class ExperimentalResults
     {
