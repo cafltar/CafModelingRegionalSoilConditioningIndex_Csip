@@ -1,4 +1,4 @@
-/// Command line arguments
+/// Command line arguments (optional)
 /// Args[0]: Full path to file containing csip locations; e.g. C:\csip\run_20200110\working\csip-locations.csv
 /// Args[1]: Full path to file containing erosion parameters; e.g. C:\csip\run_20200110\working\erosion-parameters.csv
 /// Args[2]: Full path to folder containing responses to sci scenarios, in form of json files; e.g. C:\csip\run_20200110\working\responses_sci
@@ -13,14 +13,53 @@ using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Services
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine;
 using System.IO;
 
+string csipLocationsPath;
+string erosionParametersPath;
+string csipResponsesPath;
+string outputFile ;
+
+string currentDate = DateTime.Now.ToString("yyyyMMdd");
+
+if(Args.Count == 4)
+{
+    csipLocationsPath = Args[0];
+    erosionParametersPath = Args[1];
+    csipResponsesPath = Args[2];
+    outputFile = Args[3];
+} 
+else if(Args.Count == 0)
+{
+    string cwd = Directory.GetCurrentDirectory();
+
+    csipLocationsPath = Path.Combine(
+        cwd, "working", "csip-locations.csv"
+    );
+
+    erosionParametersPath = Path.Combine(
+        cwd, "working", "erosion-parameters.csv"
+    );
+
+    csipResponsesPath = Path.Combine(
+        cwd, "working", "responses_sci"
+    );
+
+    outputFile = Path.Combine(
+        cwd, "output", $"experimental-results_{currentDate}.csv"
+    );
+}else {
+    throw new Exception("Must specify either 0 or 4 arguments");
+}
+
+if(!Directory.Exists(Path.GetDirectoryName(outputFile)))
+{
+    Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
+}
+
+
 var engine = new SciJsonResponseToExperimentalResults(
     new JsonHandler(),
     new SciV2_1(),
     new CsvHandler());
-string csipLocationsPath = Args[0];
-string erosionParametersPath = Args[1];
-string csipResponsesPath = Args[2];
-string outputFile = Args[3];
 
 engine.Run(
     csipLocationsPath, 
