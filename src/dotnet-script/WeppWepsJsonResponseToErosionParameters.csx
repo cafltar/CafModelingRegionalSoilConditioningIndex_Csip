@@ -17,8 +17,34 @@ var engine = new WeppWepsJsonResponseToErosionParameters(
     new WeppV3_1(),
     new WepsV5_2(),
     new CsvHandler());
-string inputWepp = Args[0];
-string inputWeps = Args[1];
-string outputFile = Args[2];
+
+string inputWepp;
+string inputWeps;
+string outputFile;
+
+if(Args.Count == 3)
+{
+    inputWepp = Args[0];
+    inputWeps = Args[1];
+    outputFile = Args[2];
+}
+else if(Args.Count == 0)
+{
+    string cwd = Directory.GetCurrentDirectory();
+
+    inputWepp = Path.Combine(
+        cwd, "working", "responses_wepp"
+    );
+
+    inputWeps = Path.Combine(
+        cwd, "working", "responses_weps"
+    );
+
+    outputFile = Path.Combine(
+        cwd, "working", "erosion-parameters.csv"
+    );
+} else {
+    throw new Exception("Must specify either 0 or 3 arguments");
+}
 
 engine.Run(inputWepp, inputWeps, outputFile);
