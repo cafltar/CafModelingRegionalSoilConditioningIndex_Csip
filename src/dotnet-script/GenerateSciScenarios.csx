@@ -16,11 +16,44 @@ CsvHandler reader = new CsvHandler();
 SciBuilder builder = new SciBuilder();
 ScenarioHandler writer = new ScenarioHandler();
 string currentDate = DateTime.Now.ToString("yyyyMMdd");
-string expectedZip = $"{Args[1]}\\sci_{currentDate}.zip";
-string writePath = $"{Args[1]}\\sci_{currentDate}";
 
-List<string> actual = builder.BuildScenarios(
-    reader.ReadErosionParameters(Args[0]),
+string inputFile;
+string writePath;
+
+if(Args.Count == 2)
+{
+    inputFile = Args[0];
+    writePath = $"{Args[1]}\\sci_{currentDate}";
+}
+else if(Args.Count == 0)
+{
+    string cwd = Directory.GetCurrentDirectory();
+
+    inputFile = Path.Combine(
+        cwd, 
+        "working", 
+        "erosion-parameters.csv"
+    );
+
+    writePath = Path.Combine(
+        cwd, 
+        "working", 
+        "scenarios_sci", 
+        $"sci_{currentDate}"
+    );
+} else {
+    throw new Exception("Must specify either 0 or 2 arguments");
+}
+
+if(!Directory.Exists(writePath))
+{
+    Directory.CreateDirectory(writePath);
+}
+
+Console.WriteLine($"Generating SCI scenarios from {inputFile} to {writePath}");
+
+List<string> scenarios = builder.BuildScenarios(
+    reader.ReadErosionParameters(inputFile),
     builder.GetTemplate());
 
-writer.WriteScenariosZip(actual, writePath);
+writer.WriteScenariosZip(scenarios, writePath);
