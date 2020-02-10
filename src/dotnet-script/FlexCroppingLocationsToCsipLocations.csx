@@ -1,6 +1,6 @@
 /// Command line arguments
 /// Args[0]: Full path to csv containing FlexCropping Locations; e.g. C:\csip\run_20200110\input\flex-cropping-locations.csv
-/// Args[1]: Full path to output file, including file name; e.g. C:\csip\run_20200110\working\csip-locations.csv
+/// Args[1]: (Optional) Full path to output file, including file name; e.g. C:\csip\run_20200110\working\csip-locations.csv
 #r "../dotnet/Csip.Common/bin/Debug/netstandard2.1/Csip.Common.dll"
 #r "../dotnet/Csip.Engine/bin/Debug/netstandard2.1/Csip.Engine.dll"
 #r "nuget:CsvHelper, 12.0.0"
@@ -20,6 +20,22 @@ var engine = new FlexCroppingLocationToCsipLocation(
     new CokeyChooser());
 
 string inputFile = Args[0];
-string outputFile = Args[1];
+string outputFile;
+
+if(Args.Count > 1)
+{
+    string outputFile = Args[1];
+}
+else {
+    outputFile = Path.Combine(
+        Directory.GetCurrentDirectory(), 
+        "working", 
+        "csip-locations.csv");
+}
+
+if(!Directory.Exists(Path.GetDirectoryName(outputFile)))
+{
+    Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
+}
 
 await engine.Run(inputFile, outputFile);
