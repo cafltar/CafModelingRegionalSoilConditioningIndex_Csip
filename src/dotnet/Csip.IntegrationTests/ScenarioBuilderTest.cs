@@ -55,6 +55,29 @@ namespace Csip.IntegrationTests
         }
 
         [Fact]
+        public void Rusle2_Build_ValidInput01Loc_ExpectedResult()
+        {
+            // Arrange
+            CsvHandler reader = new CsvHandler();
+            IBuildErosionModel sut = new Rusle2Builder();
+
+            // Act
+            List<string> actual = sut.BuildScenarios(
+                reader.ReadCsipLocationFile(@"Assets\location_verification_01.csv"),
+                sut.GetTemplate(),
+                sut.GetRotations());
+
+            // Assert
+            string strippedJson = Regex.Replace(actual.FirstOrDefault(), @"\s+", "");
+
+            // Check soil cokey, soil slope, soil length, rotation name
+            Assert.Contains("{\"name\":\"soilPtr\",\"value\":[\"17389235\"]}", strippedJson);
+            Assert.Contains("{\"name\":\"steepness\",\"value\":4.0}", strippedJson);
+            Assert.Contains("{\"name\":\"length\",\"value\":350.0}", strippedJson);
+            Assert.Contains("\"name\":\"R2_GrainFallow_HeavyTillage\"", strippedJson);
+        }
+
+        [Fact]
         public void Wepp_Build_ValidInput10Locs_ExpectedResults()
         {
             // Arrange

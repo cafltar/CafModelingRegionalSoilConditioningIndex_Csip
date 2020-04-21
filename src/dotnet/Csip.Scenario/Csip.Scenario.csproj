@@ -62,4 +62,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets\rotRusle2_20200420\" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,6 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using System.IO;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
 {
@@ -47,7 +46,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
         //    return rotationJsons;
         //}
 
-        private List<string> GetRotationJson(int anthromeKey)
+        public List<string> GetRotationJson(int anthromeKey)
         {
             List<string> rotationJsons = new List<string>();
 
