@@ -48,6 +48,25 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             return results;
         }
 
+        public List<Rusle2ResponseV5_0> ReadRusle2ResponseV5_0Files(
+            string filePath,
+            Rusle2V5_0 service)
+        {
+            string[] files = Directory.GetFiles(filePath, "*.json");
+
+            List<Rusle2ResponseV5_0> results = new List<Rusle2ResponseV5_0>();
+
+            foreach (var file in files)
+            {
+                string json = File.ReadAllText(file);
+                Rusle2ResponseV5_0 result = service.ParseResultsJson(json);
+
+                results.Add(result);
+            }
+
+            return results;
+        }
+
         public List<SciResponseV2_1> ReadSciResponseV2_1Files(
             string filePath,
             SciV2_1 service)

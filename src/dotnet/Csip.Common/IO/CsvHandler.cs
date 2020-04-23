@@ -1,5 +1,6 @@
 ﻿using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Files;
+using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json;
 using CsvHelper;
 using System.Collections.Generic;
 using System.IO;
@@ -27,6 +28,17 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             using (var csv = new CsvWriter(writer))
             {
                 csv.WriteRecords(locations);
+            }
+        }
+
+        public void WriteRusle2ResultFile(
+            string filePath, 
+            List<Rusle2ResponseV5_0> rusle2Responses)
+        {
+            using (var writer = new StreamWriter(filePath))
+            using (var csv = new CsvWriter(writer))
+            {
+                csv.WriteRecords(rusle2Responses);
             }
         }
 

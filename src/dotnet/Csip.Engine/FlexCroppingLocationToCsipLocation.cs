@@ -4,6 +4,7 @@ using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Services;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
@@ -27,7 +28,10 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
             this.cokeyChooser = cokeyChooser;
         }
 
-        public async Task<bool> Run(string inputFilePath, string outputFilePath)
+        public async Task<bool> Run(
+            string inputFilePath, 
+            string outputFilePath,
+            int delay = 100)
         {
             List<CsipLocation> locations = new List<CsipLocation>();
 
@@ -63,6 +67,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
                 };
 
                 locations.Add(location);
+
+                Thread.Sleep(delay);
             }
 
             // Write file
