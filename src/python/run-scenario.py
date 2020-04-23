@@ -43,6 +43,9 @@ def run_scenarios(csip_ps_url, webhook_url, bearer_token, scenario_dir):
 
     # set the webhook to subscribe for results
     ps.webhook = webhook_url
+	
+	# stagger submission in 100 ms intervals
+    ps.delay = 100
 
     # set the batch to run by pointing to all scenario payloads 
     ps.batch = os.path.join(scenario_dir, "scenario*.json")
