@@ -37,10 +37,10 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
                         Latitude = 47.053055,
                         Longitude = -117.24074,
                         RotationName = "Transition_NoTill",
-                        WeppErosion = 0.998857975006103,
+                        WeppER = 0.998857975006103,
                         WeppFO = 0.840264022350311,
                         WeppOM = 1.05330002307891,
-                        WepsErosion = 1,
+                        WepsER = 1,
                         WepsFO = 0.840264022350311,
                         WepsOM = 1.05330002307891
                     }

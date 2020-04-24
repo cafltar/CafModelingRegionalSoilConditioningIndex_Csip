@@ -84,8 +84,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
                     WindOM = erosionParameter.WepsOM,
                     WaterFO = erosionParameter.WeppFO,
                     WindFO = erosionParameter.WepsFO,
-                    WaterErosion = erosionParameter.WeppErosion,
-                    WindErosion = erosionParameter.WepsErosion,
+                    WaterErosion = erosionParameter.WeppER,
+                    WindErosion = erosionParameter.WepsER,
                     SciTotal = sciResponse.SciTotal
                 };
 

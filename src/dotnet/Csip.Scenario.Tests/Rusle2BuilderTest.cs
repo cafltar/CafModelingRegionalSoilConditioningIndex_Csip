@@ -18,7 +18,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
 
             // Assert
             Assert.Equal(6, actual.Count);
-            Assert.Equal(5, actual[11].Count);
+            Assert.Equal(4, actual[11].Count);
             Assert.Equal(3, actual[112].Count);
         }
 

@@ -148,6 +148,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                         catch(Exception e)
                         {
                             result.SoilLoss = -9999.9;
+
+                            throw new Exception("Failed setting SoilLoss", e);
                         }
                         
                         

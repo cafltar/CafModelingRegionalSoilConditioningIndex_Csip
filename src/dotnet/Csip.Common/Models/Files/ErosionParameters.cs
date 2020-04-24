@@ -24,10 +24,24 @@
 
         public double Rusle2FO { get; set; }
 
-        public double WeppErosion { get; set; }
+        public double WeppER { get; set; }
 
-        public double WepsErosion { get; set; }
+        public double WepsER { get; set; }
 
-        public double Rusle2Erosion { get; set; }
+        public double Rusle2ER { get; set; }
+
+        public double WeppStir { get; set; }
+
+        public double WepsStir { get; set; }
+
+        public double Rusle2Stir { get; set; }
+
+        public double WepsWindErosion { get; set; }
+
+        public double WeppSoilLoss { get; set; }
+
+        public double Rusle2SoilLoss { get; set; }
+
+        public double Rusle2Sci { get; set; }
     }
 }
