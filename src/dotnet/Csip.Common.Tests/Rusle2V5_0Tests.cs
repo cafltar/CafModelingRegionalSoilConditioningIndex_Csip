@@ -24,8 +24,10 @@ namespace Csip.Common.Tests
             // Assert
             Assert.Equal(0.188843446136428, actual.SCI);
             Assert.Equal("R2_GrainFallow_HeavyTillage", actual.RotationName);
-            Assert.Equal("afb894a2-83ff-11ea-a7e9-45c43e9e1c1d", actual.Suid);
-            Assert.Equal(0.81081946920465, actual.SegSoilLoss);
+            Assert.Equal("69abba4e-85b8-11ea-9468-2d456bab2f27", actual.Suid);
+            Assert.Equal(0.680779736533603, actual.ER);
+            Assert.Equal(0.011386138613861, actual.FO);
+            Assert.Equal(0.120332608460407, actual.OM);
         }
     }
 }

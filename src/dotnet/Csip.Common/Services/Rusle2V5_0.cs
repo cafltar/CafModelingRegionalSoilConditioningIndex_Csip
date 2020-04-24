@@ -118,13 +118,23 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                             Convert.ToDouble(
                                 element.GetProperty("value").GetString());
                         break;
-                    case "SLOPE_DELIVERY":
-                        result.SlopeDelivery =
+                    case "#RD:SOIL_COND_INDEX_PTR:SOIL_COND_INDEX_ER_SUBFACTOR":
+                        result.ER =
                             Convert.ToDouble(
                                 element.GetProperty("value").GetString());
                         break;
-                    case "SLOPE_DEGRAD":
-                        result.SlopeDegrad =
+                    case "#RD:SOIL_COND_INDEX_PTR:SOIL_COND_INDEX_FO_SUBFACTOR":
+                        result.FO =
+                            Convert.ToDouble(
+                                element.GetProperty("value").GetString());
+                        break;
+                    case "#RD:SOIL_COND_INDEX_PTR:SOIL_COND_INDEX_OM_SUBFACTOR":
+                        result.OM =
+                            Convert.ToDouble(
+                                element.GetProperty("value").GetString());
+                        break;
+                    case "#RD:SOIL_COND_INDEX_PTR:SOIL_COND_INDEX_STIR_VAL":
+                        result.Stir =
                             Convert.ToDouble(
                                 element.GetProperty("value").GetString());
                         break;
@@ -132,12 +142,12 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                         
                         try
                         {
-                            result.SegSoilLoss =
+                            result.SoilLoss =
                                 element.GetProperty("value")[0].GetDouble();
                         }
                         catch(Exception e)
                         {
-                            result.SegSoilLoss = -9999.9;
+                            result.SoilLoss = -9999.9;
                         }
                         
                         
@@ -161,9 +171,11 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                 Longitude = parameters.Longitude,
                 RotationName = parameters.RotationName,
                 SCI = result.SCI,
-                SlopeDelivery = result.SlopeDelivery,
-                SlopeDegrad = result.SlopeDegrad,
-                SegSoilLoss = result.SegSoilLoss
+                ER = result.ER,
+                FO = result.FO,
+                OM = result.OM,
+                SoilLoss = result.SoilLoss,
+                Stir = result.Stir
             };
 
             return results;
