@@ -12,16 +12,22 @@
         
         public string RotationName { get; set; }
 
-        public double WaterOM { get; set; }
+        public double WeppOM { get; set; }
 
-        public double WindOM { get; set; }
+        public double WepsOM { get; set; }
 
-        public double WaterFO { get; set; }
+        public double Rusle2OM { get; set; }
 
-        public double WindFO { get; set; }
+        public double WeppFO { get; set; }
 
-        public double WaterErosion { get; set; }
+        public double WepsFO { get; set; }
 
-        public double WindErosion { get; set; }
+        public double Rusle2FO { get; set; }
+
+        public double WeppErosion { get; set; }
+
+        public double WepsErosion { get; set; }
+
+        public double Rusle2Erosion { get; set; }
     }
 }

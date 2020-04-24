@@ -57,22 +57,22 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
                 switch(paramName)
                 {
                     case "erosion_water":
-                        p["value"] = erosionParameters.WaterErosion;
+                        p["value"] = erosionParameters.WeppErosion;
                         break;
                     case "water_om":
-                        p["value"] = erosionParameters.WaterOM;
+                        p["value"] = erosionParameters.WeppOM;
                         break;
                     case "water_fo":
-                        p["value"] = erosionParameters.WaterFO;
+                        p["value"] = erosionParameters.WeppFO;
                         break;
                     case "wind_om":
-                        p["value"] = erosionParameters.WaterOM;
+                        p["value"] = erosionParameters.WeppOM;
                         break;
                     case "wind_fo":
-                        p["value"] = erosionParameters.WindFO;
+                        p["value"] = erosionParameters.WepsFO;
                         break;
                     case "erosion_wind":
-                        p["value"] = erosionParameters.WindErosion;
+                        p["value"] = erosionParameters.WepsErosion;
                         break;
                 }
             }
