@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Models.Json
 {
-    public class Rusle2ResponseV5_0
+    public class Rusle2ResponseV5_0 : IErosionModelResponse
     {
         public string Suid { get; set; }
 

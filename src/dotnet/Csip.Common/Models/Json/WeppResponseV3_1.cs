@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents important values obtained from results of a WEPP simulation
     /// </summary>
-    public class WeppResponseV3_1
+    public class WeppResponseV3_1 : IErosionModelResponse
     {
         public string Suid { get; set; }
 
