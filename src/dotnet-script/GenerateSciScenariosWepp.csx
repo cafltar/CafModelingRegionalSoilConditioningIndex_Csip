@@ -1,6 +1,6 @@
 /// Command line arguments
 /// Args[0]: Full path to csv containing ErosionParameters; e.g. C:\csip\run_20200110\working\erosion-parameters.csv
-/// Args[1]: Full path to output folder; e.g. C:\csip\run_20200110\working\scenarios_sci
+/// Args[1]: Full path to output folder; e.g. C:\csip\run_20200110\working\scenarios_sci_wepp
 #r "../dotnet/Csip.Common/bin/Debug/netstandard2.1/Csip.Common.dll"
 #r "../dotnet/Csip.Scenario/bin/Debug/netstandard2.1/Csip.Scenario.dll"
 #r "nuget:CsvHelper, 12.0.0"
@@ -13,7 +13,7 @@ using System.IO;
 using System.Linq;
 
 CsvHandler reader = new CsvHandler();
-SciBuilder builder = new SciBuilder();
+IBuildSciModel builder = new SciBuilderWepp();
 ScenarioHandler writer = new ScenarioHandler();
 string currentDate = DateTime.Now.ToString("yyyyMMdd");
 
@@ -23,7 +23,7 @@ string writePath;
 if(Args.Count == 2)
 {
     inputFile = Args[0];
-    writePath = $"{Args[1]}\\sci_{currentDate}";
+    writePath = $"{Args[1]}\\sci_wepp_{currentDate}";
 }
 else if(Args.Count == 0)
 {
@@ -39,7 +39,7 @@ else if(Args.Count == 0)
         cwd, 
         "working", 
         "scenarios_sci", 
-        $"sci_{currentDate}"
+        $"sci_wepp_{currentDate}"
     );
 } else {
     throw new Exception("Must specify either 0 or 2 arguments");
@@ -50,7 +50,7 @@ if(!Directory.Exists(writePath))
     Directory.CreateDirectory(writePath);
 }
 
-Console.WriteLine($"Generating SCI scenarios from {inputFile} to {writePath}");
+Console.WriteLine($"Generating SCI scenarios using WEPP from {inputFile} to {writePath}");
 
 List<string> scenarios = builder.BuildScenarios(
     reader.ReadErosionParameters(inputFile),
