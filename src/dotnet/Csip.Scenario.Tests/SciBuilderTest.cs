@@ -13,7 +13,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario.Te
         public void BuildScenario_ValidInput_ExpectedResults()
         {
             // Arrange
-            var sut = new SciBuilder();
+            IBuildSciModel sut = new SciBuilderWepp();
             var input = GetErosionParametersMockValid();
 
             // Act

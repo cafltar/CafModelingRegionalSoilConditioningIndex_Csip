@@ -34,18 +34,6 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario
             return rotations;
         }
 
-        //private List<string> GetRotationJson(string rotationDir, string pattern)
-        //{
-        //    List<string> rotationJsons = new List<string>();
-        //
-        //    foreach (var f in Directory.GetFiles(rotationDir, pattern))
-        //    {
-        //        rotationJsons.Add(File.ReadAllText(f));
-        //    }
-        //
-        //    return rotationJsons;
-        //}
-
         public List<string> GetRotationJson(int anthromeKey)
         {
             List<string> rotationJsons = new List<string>();

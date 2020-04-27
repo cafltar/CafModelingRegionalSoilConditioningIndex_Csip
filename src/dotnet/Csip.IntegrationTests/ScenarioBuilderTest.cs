@@ -176,7 +176,7 @@ namespace Csip.IntegrationTests
         {
             // Arrange
             CsvHandler reader = new CsvHandler();
-            SciBuilder builder = new SciBuilder();
+            IBuildSciModel builder = new SciBuilderWepp();
             ScenarioHandler writer = new ScenarioHandler();
             string currentDate = DateTime.Now.ToString("yyyyMMdd");
             string writePath = $"Assets\\output\\sci_{currentDate}";
