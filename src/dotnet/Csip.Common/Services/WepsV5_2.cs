@@ -127,6 +127,9 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                     case "avg_all_stir":
                         result.Stir = element.GetProperty("value").GetDouble();
                         break;
+                    case "average_biomass":
+                        result.AverageBiomass = element.GetProperty("value").GetDouble();
+                        break;
                 }
             }
 
@@ -149,7 +152,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Serv
                 ER = result.ER,
                 FO = result.FO,
                 OM = result.OM,
-                Stir = result.Stir
+                Stir = result.Stir,
+                AverageBiomass = result.AverageBiomass
             };
 
             return results;

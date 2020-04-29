@@ -114,7 +114,8 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
                 WepsWindErosion = wepsResponse.WindErosion,
                 WeppSoilLoss = weppResponse?.SoilLoss ?? null_flag,
                 Rusle2SoilLoss = rusle2Response?.SoilLoss ?? null_flag,
-                Rusle2Sci = rusle2Response?.SCI ?? null_flag
+                Rusle2Sci = rusle2Response?.SCI ?? null_flag,
+                WepsAverageBiomass = wepsResponse?.AverageBiomass ?? null_flag
             };
 
             return result;

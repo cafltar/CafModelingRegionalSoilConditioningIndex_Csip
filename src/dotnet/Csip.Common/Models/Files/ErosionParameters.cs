@@ -40,6 +40,8 @@
 
         public double WeppSoilLoss { get; set; }
 
+        public double WepsAverageBiomass { get; set; }
+
         public double Rusle2SoilLoss { get; set; }
 
         public double Rusle2Sci { get; set; }

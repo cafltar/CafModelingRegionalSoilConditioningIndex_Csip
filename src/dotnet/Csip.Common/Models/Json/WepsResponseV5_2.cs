@@ -31,5 +31,7 @@
         // avg_all_stir: Average STIR (unitless)
         public double Stir { get; set; }
 
+        // average_biomass: Average biomass (ton/acre/year)
+        public double AverageBiomass { get; set; }
     }
 }
