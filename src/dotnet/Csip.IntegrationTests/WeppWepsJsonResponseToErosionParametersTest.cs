@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Csip.IntegrationTests
 {
-    public class WeppWepsJsonResponseToErosionParametersTest
+    public class ErosionModelJsonResponseToErosionParametersTest
     {
         [Fact]
         public void Run_ValidInput_ExpectedResults()

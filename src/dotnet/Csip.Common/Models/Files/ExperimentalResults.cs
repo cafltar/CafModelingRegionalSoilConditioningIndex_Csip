@@ -31,9 +31,9 @@
 
         public double WindFO { get; set; }
 
-        public double WaterErosion { get; set; }
+        public double ErosionWater { get; set; }
 
-        public double WindErosion { get; set; }
+        public double ErosionWind { get; set; }
 
         public double SciTotal { get; set; }
     }

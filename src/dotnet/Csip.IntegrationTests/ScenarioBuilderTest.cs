@@ -74,7 +74,7 @@ namespace Csip.IntegrationTests
             Assert.Contains("{\"name\":\"soilPtr\",\"value\":[\"17389235\"]}", strippedJson);
             Assert.Contains("{\"name\":\"steepness\",\"value\":4.0}", strippedJson);
             Assert.Contains("{\"name\":\"length\",\"value\":350.0}", strippedJson);
-            Assert.Contains("\"name\":\"R2_GrainFallow_HeavyTillage\"", strippedJson);
+            Assert.Contains("\"name\":\"GrainFallow_HeavyTillage\"", strippedJson);
         }
 
         [Fact]
@@ -184,7 +184,7 @@ namespace Csip.IntegrationTests
 
             // Act
             List<string> actual = builder.BuildScenarios(
-                reader.ReadErosionParameters(@"Assets\erosion-params-output.csv"),
+                reader.ReadErosionParameters(@"Assets\erosion-parameters.csv"),
                 builder.GetTemplate());
 
             writer.WriteScenariosZip(actual, writePath);

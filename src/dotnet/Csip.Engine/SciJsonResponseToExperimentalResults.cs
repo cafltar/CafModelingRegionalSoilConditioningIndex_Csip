@@ -80,12 +80,12 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
                     SlopeLength = csipLocation.SlopeLength,
                     PercentOfMapUnit = csipLocation.PercentOfMapUnit,
                     MapUnitName = csipLocation.MapUnitName,
-                    WaterOM = erosionParameter.WeppOM,
-                    WindOM = erosionParameter.WepsOM,
-                    WaterFO = erosionParameter.WeppFO,
-                    WindFO = erosionParameter.WepsFO,
-                    WaterErosion = erosionParameter.WeppER,
-                    WindErosion = erosionParameter.WepsER,
+                    WaterOM = sciResponse.WaterOM,
+                    WindOM = sciResponse.WindOM,
+                    WaterFO = sciResponse.WaterFO,
+                    WindFO = sciResponse.WindFO,
+                    ErosionWater = sciResponse.ErosionWater,
+                    ErosionWind = sciResponse.ErosionWind,
                     SciTotal = sciResponse.SciTotal
                 };
 
