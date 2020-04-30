@@ -14,6 +14,19 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Mode
 
         public string RotationName { get; set; }
 
+        public double ErosionWater { get; set; }
+
+        public double WaterOM { get; set; }
+
+        public double WaterFO { get; set; }
+
+        public double WindOM { get; set; }
+
+        public double WindFO { get; set; }
+
+        public double ErosionWind { get; set; }
+
+
         public double SciTotal { get; set; }
     }
 }

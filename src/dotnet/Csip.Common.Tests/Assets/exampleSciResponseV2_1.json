@@ -1,47 +1,54 @@
 {
   "metainfo": {
-    "name": "45.0001__-117.3001__Annual_NoTill",
+    "name": "46.311713123__-116.896475566__Transition_NoTill",
     "description": "SCI",
     "state": "Development",
-    "service_url": "http://csip.engr.colostate.edu:8083/csip-sq/m/sci/2.1",
+    "service_url": "http://csip.engr.colostate.edu:8086/csip-sq/m/sci/2.1",
+    "mode": "async",
+    "webhook": "https://prod-30.westus2.logic.azure.com:443/workflows/45e0cd497e4b4e74969674d59111208f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=T7FwS634wBeXGKuquxmyUEW3lp2lF7Ki3uu-iTckYto",
+    "request_file": "scenario0000.json",
+    "attachments": "request.json",
+    "suid": "55fcd0da-8a75-11ea-a5cd-656c229885ff",
+    "csip-auth": "28fbb0872d761c6e61162fcf71a002c2",
+    "cap": 0,
+    "sn": 5844,
     "status": "Finished",
-    "suid": "53edca93-3304-11ea-9641-e599c84e312b",
-    "cloud_node": "10.38.0.9",
-    "request_ip": "199.133.207.245",
-    "tstamp": "2020-01-09 10:20:26",
-    "cpu_time": 3,
-    "expiration_date": "2020-01-09 10:20:56"
+    "cloud_node": "10.38.128.44",
+    "request_ip": "129.82.20.234",
+    "tstamp": "2020-04-29 17:58:35",
+    "cpu_time": 28,
+    "expiration_date": "2020-04-29 17:59:05"
   },
   "parameter": [
     {
       "name": "erosion_water",
-      "value": 0
+      "value": 0.970992957076145
     },
     {
       "name": "water_om",
-      "value": 0
+      "value": 0.717950513657798
     },
     {
       "name": "water_fo",
-      "value": 0
+      "value": 0.734653465346535
     },
     {
       "name": "wind_om",
-      "value": 0
+      "value": 0.717950513657798
     },
     {
       "name": "wind_fo",
-      "value": 0
+      "value": 0.7604
     },
     {
       "name": "erosion_wind",
-      "value": 0
+      "value": 1
     }
   ],
   "result": [
     {
       "name": "sci_total",
-      "value": 0.2
+      "value": 0.6309946026996589
     }
   ]
 }
