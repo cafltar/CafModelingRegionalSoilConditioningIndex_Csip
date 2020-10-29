@@ -31,6 +31,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
         public async Task<bool> Run(
             string inputFilePath, 
             string outputFilePath,
+            double pixelSizeKm = 4,
             int delay = 100)
         {
             List<CsipLocation> locations = new List<CsipLocation>();
@@ -43,7 +44,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Engine
             foreach(var point in points)
             {
                 string polygonString = converter.GetPixelAsBoundingBoxString(
-                    point.Latitude, point.Longitude, 4);
+                    point.Latitude, point.Longitude, pixelSizeKm);
 
                 string resultJson = await serviceHandler.Post(polygonString);
 
