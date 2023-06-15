@@ -22,6 +22,7 @@ import configparser
 
 def run_scenarios(csip_ps_url, webhook_url, bearer_token, scenario_dir):
     print('---- Running with following parameters: ----')
+    print('csip.__version__' + csip.__version__)
     print('csip_ps_url: ' + csip_ps_url)
     print('webhook_url: ' + webhook_url)
     print('bearer_token: ' + bearer_token)

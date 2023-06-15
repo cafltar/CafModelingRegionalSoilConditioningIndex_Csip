@@ -22,6 +22,18 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             }
         }
 
+        public List<InputCentroidLocation> ReadInputCentroidLocationFile(string filePath)
+        {
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader))
+            {
+                var records =
+                    csv.GetRecords<InputCentroidLocation>().ToList();
+
+                return records;
+            }
+        }
+
         public void WriteCsipLocationFile(string filePath, List<CsipLocation> locations)
         {
             using (var writer = new StreamWriter(filePath))
