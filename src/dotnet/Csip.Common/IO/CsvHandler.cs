@@ -13,7 +13,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
         public List<FlexCroppingLocation> ReadFlexCroppingLocationFile(string filePath)
         {
             using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvReader(reader))
+            using (var csv = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
             {
                 var records = 
                     csv.GetRecords<FlexCroppingLocation>().ToList();
@@ -25,7 +25,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
         public List<InputCentroidLocation> ReadInputCentroidLocationFile(string filePath)
         {
             using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvReader(reader))
+            using (var csv = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
             {
                 var records =
                     csv.GetRecords<InputCentroidLocation>().ToList();
@@ -37,7 +37,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
         public void WriteCsipLocationFile(string filePath, List<CsipLocation> locations)
         {
             using (var writer = new StreamWriter(filePath))
-            using (var csv = new CsvWriter(writer))
+            using (var csv = new CsvWriter(writer, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(locations);
             }
@@ -48,7 +48,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             List<Rusle2ResponseV5_0> rusle2Responses)
         {
             using (var writer = new StreamWriter(filePath))
-            using (var csv = new CsvWriter(writer))
+            using (var csv = new CsvWriter(writer, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(rusle2Responses);
             }
@@ -57,7 +57,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
         public List<CsipLocation> ReadCsipLocationFile(string filePath)
         {
             using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvReader(reader))
+            using (var csv = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
             {
                 var records =
                     csv.GetRecords<CsipLocation>().ToList();
@@ -71,7 +71,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             List<ErosionParameters> erosionParameters)
         {
             using (var writer = new StreamWriter(filePath))
-            using (var csv = new CsvWriter(writer))
+            using (var csv = new CsvWriter(writer, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(erosionParameters);
             }
@@ -80,7 +80,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
         public List<ErosionParameters> ReadErosionParameters(string filePath)
         {
             using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvReader(reader))
+            using (var csv = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
             {
                 var records =
                     csv.GetRecords<ErosionParameters>().ToList();
@@ -94,7 +94,7 @@ namespace Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO
             List<ExperimentalResults> experimentalResults)
         {
             using (var writer = new StreamWriter(filePath))
-            using (var csv = new CsvWriter(writer))
+            using (var csv = new CsvWriter(writer, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(experimentalResults);
             }
