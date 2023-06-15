@@ -4,9 +4,9 @@
 /// Args[2]: Full path to folder containing responses to sci scenarios, in form of json files; e.g. C:\csip\run_20200110\working\responses_sci
 /// Args[3]: Full path to output file for experimental results, including file name and extension; e.g. C:\csip\run_20200110\output\experimental-results.csv
 
-#r "../dotnet/Csip.Common/bin/Debug/netstandard2.1/Csip.Common.dll"
-#r "../dotnet/Csip.Engine/bin/Debug/netstandard2.1/Csip.Engine.dll"
-#r "nuget:CsvHelper, 12.0.0"
+#r "../dotnet/Csip.Common/bin/Debug/net7.0/Csip.Common.dll"
+#r "../dotnet/Csip.Engine/bin/Debug/net7.0/Csip.Engine.dll"
+#r "nuget:CsvHelper, 30.0.1"
 
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.Services;

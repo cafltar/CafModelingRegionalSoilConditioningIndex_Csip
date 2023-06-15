@@ -1,9 +1,9 @@
 /// Command line arguments (optional)
 /// Args[0]: Full path to csv containing CsipLocations; e.g. C:\csip\run_20200110\working\csip-locations.csv
 /// Args[1]: Full path to output folder; e.g. C:\csip\run_20200110\working\scenarios_wepp
-#r "../dotnet/Csip.Common/bin/Debug/netstandard2.1/Csip.Common.dll"
-#r "../dotnet/Csip.Scenario/bin/Debug/netstandard2.1/Csip.Scenario.dll"
-#r "nuget:CsvHelper, 12.0.0"
+#r "../dotnet/Csip.Common/bin/Debug/net7.0/Csip.Common.dll"
+#r "../dotnet/Csip.Scenario/bin/Debug/net7.0/Csip.Scenario.dll"
+#r "nuget:CsvHelper, 30.0.1"
 
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Common.IO;
 using Caf.Projects.CafModelingRegionalSoilConditioningIndex.Csip.Scenario;
